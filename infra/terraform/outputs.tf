@@ -1,14 +1,4 @@
 # Outputs das filas SQS
-output "upload_imagens_queue_url" {
-  description = "URL da fila SQS para upload de imagens"
-  value       = aws_sqs_queue.upload_imagens.url
-}
-
-output "upload_imagens_queue_arn" {
-  description = "ARN da fila SQS para upload de imagens"
-  value       = aws_sqs_queue.upload_imagens.arn
-}
-
 output "upload_notifications_queue_url" {
   description = "URL da fila SQS para notificações de upload"
   value       = aws_sqs_queue.upload_notifications.url
@@ -39,11 +29,6 @@ output "sqs_access_policy_arn" {
 output "queue_summary" {
   description = "Resumo de todas as filas SQS criadas"
   value = {
-    upload_imagens = {
-      name = aws_sqs_queue.upload_imagens.name
-      url  = aws_sqs_queue.upload_imagens.url
-      arn  = aws_sqs_queue.upload_imagens.arn
-    }
     upload_notifications = {
       name = aws_sqs_queue.upload_notifications.name
       url  = aws_sqs_queue.upload_notifications.url
