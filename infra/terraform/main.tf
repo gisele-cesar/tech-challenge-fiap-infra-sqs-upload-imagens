@@ -56,7 +56,6 @@ resource "aws_iam_policy" "sqs_access_policy" {
           "sqs:ListQueues"
         ]
         Resource = [
-          aws_sqs_queue.upload_imagens.arn,
           aws_sqs_queue.upload_notifications.arn
         ]
       }
