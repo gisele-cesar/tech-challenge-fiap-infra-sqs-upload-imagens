@@ -1,17 +1,3 @@
-# Fila principal para upload de imagens
-resource "aws_sqs_queue" "upload_imagens" {
-  name                       = "${var.project_name}-upload-imagens"
-  delay_seconds              = var.sqs_delay_seconds
-  max_message_size           = var.sqs_max_message_size
-  message_retention_seconds  = var.sqs_message_retention_seconds
-  visibility_timeout_seconds = var.sqs_visibility_timeout
-
-  tags = {
-    Name = "${var.project_name}-upload-imagens"
-    Type = "MainQueue"
-  }
-}
-
 # Fila para notificações de upload completo
 resource "aws_sqs_queue" "upload_notifications" {
   name                       = "${var.project_name}-upload-notifications"
